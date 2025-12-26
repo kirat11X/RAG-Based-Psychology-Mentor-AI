@@ -1,7 +1,4 @@
-Here’s a **clean, professional, interview-ready `README.md`** tailored exactly to your project and repo name.
-You can **copy-paste this directly** into GitHub.
 
----
 
 ````md
 # 🧠 RAG-Based Psychology Mentor AI
