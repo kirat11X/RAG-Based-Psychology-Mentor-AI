@@ -1,0 +1,20 @@
+conda activate chatbot313
+cd ~/chatbot
+python dataset.py
+cd /home/kirat/chatbot
+source .venv/bin/activate
+python dataset.py
+
+cd /home/kirat/chatbot
+source .venv/bin/activate
+export EMBEDDINGS_PROVIDER=huggingface
+python dataset.py 
+populate_dataset.py
+
+python streamlit_app.py
+python query_data.py
+
+if testing
+python test_rag.py
+python test_safety_rules.py
+python emphathy.py
