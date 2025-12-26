@@ -216,6 +216,7 @@ You are free to use, modify, and distribute it with attribution.
 ## 👤 Author
 
 Developed by **Kritansh Uppal**
+Contact Me: kritansh.11.sss@gmail.com
 For educational, research, and portfolio purposes.
 
 ---
