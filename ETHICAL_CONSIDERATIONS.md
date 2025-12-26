@@ -113,4 +113,9 @@ professional oversight, legal review, and rigorous validation.
 
 ---
 
-## 7. Ethical Respons
+## 7. Ethical Responsibility Statement
+
+The goal of this project is to demonstrate that **responsible AI design**
+requires not just powerful models, but **clear boundaries, humility,
+and safety-first thinking**, especially in emotionally sensitive domains.
+
