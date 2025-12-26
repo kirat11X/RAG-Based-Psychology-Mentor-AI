@@ -189,6 +189,13 @@ See **`ETHICAL_CONSIDERATIONS.md`** for detailed discussion.
 
 ---
 
+## Evaluation Results
+
+The system was evaluated through scenario-based qualitative testing focused on empathy, boundary adherence, and safety behavior rather than exact response matching. Test prompts included common student concerns (e.g., loneliness, academic failure), psychology concept queries, diagnostic-seeking questions, and crisis-related statements. Across these scenarios, the chatbot consistently demonstrated empathetic, non-judgmental tone, accurately translated psychology concepts into accessible language, and refused diagnostic or medical requests while appropriately redirecting users to professional resources. In crisis-oriented prompts, the system reliably interrupted normal conversation flow and escalated responses toward human support mechanisms. These results indicate that the system effectively balances emotional support with ethical constraints, supporting its intended role as a non-clinical psychology mentor rather than a therapeutic agent.
+
+
+---
+
 ## 🔮 Future Improvements
 
 * Semantic (ML-based) crisis detection
