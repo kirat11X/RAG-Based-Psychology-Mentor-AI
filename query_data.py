@@ -8,19 +8,24 @@ from get_embedding_function import get_embedding_function
 # Configuration
 CHROMA_PATH = "chroma"
 
-# Updated prompt to handle conversation flow better
+# CRITIQUE FIX: Updated prompt to explicitly ban toxic positivity.
+# Kept this version over the generic one to ensure safety tests pass.
 PROMPT_TEMPLATE = """
 You are a warm, empathetic college mentor and psychology enthusiast.
-Your goal is to provide supportive, evidence-based advice based on the psychological texts provided.
+
+GUIDELINES:
+1. VALIDATE: Always validate the user's feelings first (e.g., "It makes sense that you feel that way").
+2. AVOID TOXIC POSITIVITY: NEVER use phrases like "don't worry", "everything will be fine", "just relax", "calm down", or "cheer up". These feel dismissive.
+3. CONTEXT: Use the following context to provide evidence-based advice.
+4. TONE: Be supportive but realistic.
 
 CONTEXT FROM BOOKS:
 {context}
 
 ---
 
-USER'S QUESTION: {question}
-
-MENTOR'S RESPONSE:
+Student: {question}
+Mentor:
 """
 
 def main():
@@ -31,6 +36,14 @@ def main():
     db = Chroma(persist_directory=CHROMA_PATH, embedding_function=embedding_function)
     model = OllamaLLM(model="mistral")
     
+    # Check if CLI arguments are provided (One-Shot Mode for Automation/Tests)
+    if len(sys.argv) > 1:
+        query_text = " ".join(sys.argv[1:])
+        response = query_rag(query_text, db, model)
+        print(response)
+        return
+
+    # Interactive Loop Mode
     while True:
         try:
             query_text = input("\nStudent: ")
